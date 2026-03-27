@@ -5,16 +5,16 @@ import { Card } from '@/components/ui/card'
 
 const services = [
   {
-    title: 'AI Strategy & Planning',
-    description: 'Develop a comprehensive AI roadmap tailored to your business objectives. We assess your current capabilities and identify high-impact AI opportunities.'
+    title: 'AI-Strategie & Planning',
+    description: 'Ontwikkel een uitgebreide AI-roadmap afgestemd op uw zakelijke doelen. Wij beoordelen uw huidige capaciteiten en identificeren AI-kansen met hoge impact.'
   },
   {
-    title: 'Technical Implementation',
-    description: 'Build and deploy AI solutions that integrate seamlessly with your existing systems. From LLMs to computer vision, we have the expertise.'
+    title: 'Technische Implementatie',
+    description: 'Bouw en implementeer AI-oplossingen die naadloos integreren met uw bestaande systemen. Van LLM\'s tot computer vision, wij hebben de expertise.'
   },
   {
-    title: 'Team Training & Support',
-    description: 'Empower your team with the knowledge and skills needed to leverage AI effectively. Ongoing support ensures long-term success.'
+    title: 'Teamtraining & Ondersteuning',
+    description: 'Geef uw team de kennis en vaardigheden om AI effectief in te zetten. Doorlopende ondersteuning garandeert langdurig succes.'
   }
 ]
 
@@ -36,10 +36,10 @@ export function Services() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
-            Our Services
+            Onze Diensten
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Comprehensive AI solutions designed to accelerate your digital transformation
+            Uitgebreide AI-oplossingen ontworpen om uw digitale transformatie te versnellen
           </p>
         </motion.div>
 

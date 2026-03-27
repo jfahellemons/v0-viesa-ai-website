@@ -14,42 +14,42 @@ export function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h4 className="font-bold text-lg mb-4 text-background">Dutch AI Consulting</h4>
+            <h4 className="font-bold text-lg mb-4 text-background">Viesa AI Automations</h4>
             <p className="text-sm opacity-75">
-              Transforming businesses through intelligent AI solutions.
+              Bedrijven transformeren door middel van intelligente AI-oplossingen.
             </p>
           </div>
 
           <div>
-            <h5 className="font-semibold mb-4 text-background">Services</h5>
+            <h5 className="font-semibold mb-4 text-background">Diensten</h5>
             <ul className="space-y-2 text-sm opacity-75">
-              <li><a href="#" className="hover:opacity-100 transition">Strategy</a></li>
-              <li><a href="#" className="hover:opacity-100 transition">Implementation</a></li>
+              <li><a href="#" className="hover:opacity-100 transition">Strategie</a></li>
+              <li><a href="#" className="hover:opacity-100 transition">Implementatie</a></li>
               <li><a href="#" className="hover:opacity-100 transition">Training</a></li>
             </ul>
           </div>
 
           <div>
-            <h5 className="font-semibold mb-4 text-background">Company</h5>
+            <h5 className="font-semibold mb-4 text-background">Bedrijf</h5>
             <ul className="space-y-2 text-sm opacity-75">
-              <li><a href="#" className="hover:opacity-100 transition">About</a></li>
+              <li><a href="#" className="hover:opacity-100 transition">Over Ons</a></li>
               <li><a href="#" className="hover:opacity-100 transition">Blog</a></li>
               <li><a href="#" className="hover:opacity-100 transition">Contact</a></li>
             </ul>
           </div>
 
           <div>
-            <h5 className="font-semibold mb-4 text-background">Connect</h5>
+            <h5 className="font-semibold mb-4 text-background">Volg Ons</h5>
             <ul className="space-y-2 text-sm opacity-75">
               <li><a href="#" className="hover:opacity-100 transition">LinkedIn</a></li>
-              <li><a href="#" className="hover:opacity-100 transition">Twitter</a></li>
-              <li><a href="mailto:info@example.com" className="hover:opacity-100 transition">Email</a></li>
+              <li><a href="#" className="hover:opacity-100 transition">X (Twitter)</a></li>
+              <li><a href="mailto:info@example.com" className="hover:opacity-100 transition">E-mail</a></li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-background/20 pt-8 text-center text-sm opacity-75">
-          <p>&copy; 2024 Dutch AI Consulting. All rights reserved.</p>
+          <p>&copy; 2024 Viesa AI Automations. Alle rechten voorbehouden.</p>
         </div>
       </div>
     </motion.footer>

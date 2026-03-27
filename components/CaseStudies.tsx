@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
+import { AnimatedCounter } from '@/components/AnimatedCounter'
 
 export function CaseStudies() {
   return (
@@ -21,18 +22,18 @@ export function CaseStudies() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
-            Impact & Results
+            Impact & Resultaten
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Real outcomes from our AI implementations
+            Echte resultaten van onze AI-implementaties
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {[
-            { metric: '+45%', label: 'Average Efficiency Gain' },
-            { metric: '€2.3M', label: 'Total Cost Savings Generated' },
-            { metric: '92%', label: 'On-Time Project Delivery' }
+            { value: 45, prefix: '+', suffix: '%', label: 'Gemiddelde Efficiëntiewinst', decimals: 0 },
+            { value: 2.3, prefix: '€', suffix: 'M', label: 'Kostenbesparing Gerealiseerd', decimals: 1 },
+            { value: 92, prefix: '', suffix: '%', label: 'Tijdige Projectoplevering', decimals: 0 }
           ].map((item, i) => (
             <motion.div
               key={i}
@@ -42,8 +43,15 @@ export function CaseStudies() {
               viewport={{ once: true, amount: 0.5 }}
               className="text-center p-8 bg-card rounded-lg border border-border"
             >
-              <div className="text-accent text-4xl font-bold mb-2">{item.metric}</div>
-              <p className="text-muted-foreground">{item.label}</p>
+              <div className="text-[#173853] text-4xl md:text-5xl font-extrabold mb-3">
+                <AnimatedCounter 
+                  value={item.value} 
+                  prefix={item.prefix} 
+                  suffix={item.suffix} 
+                  decimals={item.decimals} 
+                />
+              </div>
+              <p className="text-muted-foreground font-medium">{item.label}</p>
             </motion.div>
           ))}
         </div>
@@ -51,14 +59,14 @@ export function CaseStudies() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
             {
-              company: 'FinTech Company',
-              challenge: 'Complex document processing',
-              result: 'Reduced processing time by 80% with AI-powered document analysis'
+              company: 'FinTech Bedrijf',
+              challenge: 'Complexe documentverwerking',
+              result: 'Verwerkingstijd met 80% gereduceerd door AI-gedreven documentanalyse'
             },
             {
-              company: 'Manufacturing Firm',
-              challenge: 'Quality control bottlenecks',
-              result: 'Improved defect detection accuracy to 99.2% using computer vision'
+              company: 'Productiebedrijf',
+              challenge: 'Knelpunten in kwaliteitscontrole',
+              result: 'Nauwkeurigheid van foutdetectie verbeterd naar 99,2% met computer vision'
             }
           ].map((study, i) => (
             <motion.div
@@ -70,7 +78,7 @@ export function CaseStudies() {
             >
               <Card className="p-8 bg-card border border-border h-full">
                 <h3 className="text-xl font-bold text-foreground mb-2">{study.company}</h3>
-                <p className="text-sm text-accent mb-4">Challenge: {study.challenge}</p>
+                <p className="text-sm text-accent mb-4">Uitdaging: {study.challenge}</p>
                 <p className="text-foreground">{study.result}</p>
               </Card>
             </motion.div>

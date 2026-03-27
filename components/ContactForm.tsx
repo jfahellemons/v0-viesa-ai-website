@@ -28,14 +28,14 @@ export function ContactForm() {
     
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
-      alert('Please fill in all fields')
+      alert('Vul a.u.b. alle velden in')
       return
     }
 
     // Email regex validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(formData.email)) {
-      alert('Please enter a valid email')
+      alert('Voer a.u.b. een geldig e-mailadres in')
       return
     }
 
@@ -66,10 +66,10 @@ export function ContactForm() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
-              Get in Touch
+              Neem Contact Op
             </h2>
             <p className="text-muted-foreground text-lg">
-              Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
+              Heeft u vragen? We horen graag van u. Stuur ons een bericht en we reageren zo snel mogelijk.
             </p>
           </motion.div>
 
@@ -83,7 +83,7 @@ export function ContactForm() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <Label htmlFor="name" className="text-foreground font-semibold mb-2 block">
-                    Name
+                    Naam
                   </Label>
                   <Input
                     id="name"
@@ -91,14 +91,14 @@ export function ContactForm() {
                     type="text"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Your name"
+                    placeholder="Uw naam"
                     className="bg-input border-border text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
 
                 <div>
                   <Label htmlFor="email" className="text-foreground font-semibold mb-2 block">
-                    Email
+                    E-mail
                   </Label>
                   <Input
                     id="email"
@@ -106,21 +106,21 @@ export function ContactForm() {
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="your@email.com"
+                    placeholder="uw@email.nl"
                     className="bg-input border-border text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
 
                 <div>
                   <Label htmlFor="message" className="text-foreground font-semibold mb-2 block">
-                    Message
+                    Bericht
                   </Label>
                   <Textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Tell us about your project..."
+                    placeholder="Vertel ons over uw project..."
                     rows={5}
                     className="bg-input border-border text-foreground placeholder:text-muted-foreground resize-none"
                   />
@@ -131,7 +131,7 @@ export function ContactForm() {
                   disabled={isLoading}
                   className="w-full bg-primary text-primary-foreground hover:opacity-90 disabled:opacity-50 h-12 text-base font-semibold"
                 >
-                  {isLoading ? 'Sending...' : 'Send Message'}
+                  {isLoading ? 'Verzenden...' : 'Verstuur Bericht'}
                 </Button>
               </form>
             </Card>

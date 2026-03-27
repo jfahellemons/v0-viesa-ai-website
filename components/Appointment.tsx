@@ -21,10 +21,10 @@ export function Appointment() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
-            Schedule Your Consultation
+            Plan Uw Adviesgesprek
           </h2>
           <p className="text-muted-foreground text-lg">
-            Pick a time that works for you
+            Kies een tijd die u uitkomt
           </p>
         </motion.div>
 
@@ -40,7 +40,7 @@ export function Appointment() {
               <div className="flex flex-col">
                 <h3 className="font-semibold text-foreground mb-4">April 2024</h3>
                 <div className="grid grid-cols-7 gap-1 md:gap-2">
-                  {['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'].map((day, i) => (
+                  {['Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za', 'Zo'].map((day, i) => (
                     <div key={i} className="text-center text-xs md:text-sm font-medium text-muted-foreground py-2">
                       {day}
                     </div>
@@ -67,7 +67,7 @@ export function Appointment() {
 
               {/* Time Slots */}
               <div className="flex flex-col">
-                <h3 className="font-semibold text-foreground mb-4">Available Times</h3>
+                <h3 className="font-semibold text-foreground mb-4">Beschikbare Tijden</h3>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                   {['9:00 AM', '10:30 AM', '2:00 PM', '3:30 PM', '4:00 PM', '5:00 PM'].map((time, i) => (
                     <motion.button

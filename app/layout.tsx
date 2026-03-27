@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { Header } from '@/components/Header'
 import './globals.css'
 
 const geist = Geist({ 
@@ -51,6 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
       <body className="font-sans antialiased bg-background text-foreground">
+        <Header />
         {children}
         <Analytics />
       </body>
