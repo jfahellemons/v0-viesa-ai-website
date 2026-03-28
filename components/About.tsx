@@ -10,7 +10,7 @@ export function About() {
       initial={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true, amount: 0.5 }}
-      className="py-20 px-4 bg-background"
+      className="py-20 px-4 bg-[#e4edf8]"
     >
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

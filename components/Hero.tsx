@@ -9,9 +9,14 @@ export function Hero() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="relative min-h-[90vh] flex items-center justify-center px-4 py-20 bg-gradient-to-br from-[#13293d] via-[#16324f] to-[#18435a] overflow-hidden"
+      className="relative min-h-[90vh] flex items-center justify-center px-4 py-20 overflow-hidden"
+      style={{
+        backgroundImage: "url('/hero-bg.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
-      <div className="absolute inset-0 bg-[#3e92cc]/5 -z-10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#13293d]/85 via-[#16324f]/85 to-[#18435a]/95 -z-10" />
       <div className="max-w-3xl mx-auto text-center relative z-10">
         <motion.h1
           initial={{ opacity: 0, y: 10 }}
