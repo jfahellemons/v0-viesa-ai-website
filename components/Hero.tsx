@@ -11,18 +11,18 @@ export function Hero() {
       transition={{ duration: 0.8 }}
       className="relative min-h-[90vh] flex items-center justify-center px-4 py-20 overflow-hidden"
       style={{
-        backgroundImage: "url('/hero-bg.png')",
+        backgroundImage: "url('/hero-bg.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-[#13293d]/85 via-[#16324f]/85 to-[#18435a]/95 -z-10" />
+      <div className="absolute inset-0 bg-[#19435a]/80 backdrop-blur-[1px] z-0" />
       <div className="max-w-3xl mx-auto text-center relative z-10">
         <motion.h1
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl md:text-6xl font-bold text-white mb-6 text-balance"
+          className="text-4xl md:text-6xl font-bold text-white mb-6 text-balance drop-shadow-2xl"
         >
           Transformeer uw bedrijf met VIESA
         </motion.h1>
@@ -31,7 +31,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg md:text-xl text-white/90 mb-8 text-balance leading-relaxed"
+          className="text-lg md:text-xl text-white/95 mb-8 text-balance leading-relaxed drop-shadow-lg"
         >
           Expert AI-advies en implementatiediensten op maat voor bedrijven. Strategische begeleiding, technische uitmuntendheid en meetbare resultaten.
         </motion.p>
