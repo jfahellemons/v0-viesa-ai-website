@@ -6,8 +6,23 @@ import { Button } from '@/components/ui/button'
 import { ContactModal } from './ContactModal'
 import Image from 'next/image'
 
-export function ContactCTA() {
+export interface ContactCTAProps {
+  title?: string;
+  subtitle?: string;
+  buttonText?: string;
+  image?: { asset?: { url?: string } };
+}
+
+export function ContactCTA({
+  title = "Nieuwsgierig hoe we je kunnen helpen?",
+  subtitle = "Neem vandaag nog contact met ons op.",
+  buttonText = "Neem contact op",
+  image
+}: ContactCTAProps) {
   const [modalOpen, setModalOpen] = useState(false)
+
+  const defaultImageSrc = "/contact-office.png"
+  const resolvedImageSrc = image?.asset?.url || defaultImageSrc
 
   return (
     <section className="py-20 px-4 bg-background">
@@ -28,7 +43,7 @@ export function ContactCTA() {
               viewport={{ once: true }}
               className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
             >
-              Nieuwsgierig hoe we je kunnen helpen?
+              {title}
             </motion.h2>
             <motion.p
               whileInView={{ opacity: 1, x: 0 }}
@@ -37,7 +52,7 @@ export function ContactCTA() {
               viewport={{ once: true }}
               className="text-xl text-white/80 mb-10"
             >
-              Neem vandaag nog contact met ons op.
+              {subtitle}
             </motion.p>
             
             <motion.div
@@ -51,7 +66,7 @@ export function ContactCTA() {
                 onClick={() => setModalOpen(true)}
                 className="bg-[#008f6b] hover:bg-[#00a87e] text-white px-8 h-14 text-lg rounded-xl font-bold transition-all duration-300 shadow-lg shadow-black/20"
               >
-                Neem contact op
+                {buttonText}
               </Button>
             </motion.div>
           </div>
@@ -59,7 +74,7 @@ export function ContactCTA() {
           {/* Image Container */}
           <div className="flex-1 relative min-h-[300px] md:min-h-auto overflow-hidden md:rounded-tl-[4rem] md:rounded-bl-[4rem]">
              <Image
-              src="/contact-office.png"
+              src={resolvedImageSrc}
               alt="Neem contact op met ons team"
               fill
               className="object-cover"
@@ -77,3 +92,4 @@ export function ContactCTA() {
     </section>
   )
 }
+

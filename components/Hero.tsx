@@ -3,7 +3,21 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 
-export function Hero() {
+export interface HeroProps {
+  title?: string;
+  subtitle?: string;
+  primaryButtonText?: string;
+  secondaryButtonText?: string;
+  backgroundImage?: string;
+}
+
+export function Hero({ 
+  title = "Expert AI-advies", 
+  subtitle = "Expert AI-advies en implementatiediensten op maat voor bedrijven. Strategische begeleiding, technische uitmuntendheid en meetbare resultaten.",
+  primaryButtonText = "Gratis Adviesgesprek",
+  secondaryButtonText = "Plan een AI-Audit",
+  backgroundImage 
+}: HeroProps) {
   return (
     <motion.section
       initial={{ opacity: 0, y: 20 }}
@@ -11,7 +25,7 @@ export function Hero() {
       transition={{ duration: 0.8 }}
       className="relative min-h-[90vh] flex items-center justify-center px-4 py-20 overflow-hidden"
       style={{
-        backgroundImage: "url('/hero-bg.jpg')",
+        backgroundImage: backgroundImage ? `url('${backgroundImage}')` : undefined,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -24,7 +38,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-4xl md:text-6xl font-bold text-white mb-6 text-balance drop-shadow-2xl"
         >
-          Transformeer uw bedrijf met VIESA
+          {title}
         </motion.h1>
 
         <motion.p
@@ -33,7 +47,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-lg md:text-xl text-white/95 mb-8 text-balance leading-relaxed drop-shadow-lg"
         >
-          Expert AI-advies en implementatiediensten op maat voor bedrijven. Strategische begeleiding, technische uitmuntendheid en meetbare resultaten.
+          {subtitle}
         </motion.p>
 
         <motion.div
@@ -42,21 +56,26 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto"
         >
-          <Button
-            size="lg"
-            className="bg-[#2a628f] text-white hover:bg-[#3e92cc] px-6 sm:px-8 h-12 text-sm sm:text-base w-full sm:w-auto"
-          >
-            Gratis Adviesgesprek
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#13293d] px-6 sm:px-8 h-12 text-sm sm:text-base w-full sm:w-auto transition-colors"
-          >
-            Plan een AI-Audit
-          </Button>
+          {primaryButtonText && (
+            <Button
+              size="lg"
+              className="bg-[#2a628f] text-white hover:bg-[#3e92cc] px-6 sm:px-8 h-12 text-sm sm:text-base w-full sm:w-auto"
+            >
+              {primaryButtonText}
+            </Button>
+          )}
+          {secondaryButtonText && (
+            <Button
+              size="lg"
+              variant="outline"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#13293d] px-6 sm:px-8 h-12 text-sm sm:text-base w-full sm:w-auto transition-colors"
+            >
+              {secondaryButtonText}
+            </Button>
+          )}
         </motion.div>
       </div>
     </motion.section>
   )
 }
+

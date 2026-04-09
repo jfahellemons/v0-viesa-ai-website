@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Quicksand, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Header } from '@/components/Header'
 import './globals.css'
 
-const geist = Geist({ 
+const quicksand = Quicksand({ 
   subsets: ['latin'],
-  variable: '--font-geist'
+  variable: '--font-quicksand'
 })
 
 const geistMono = Geist_Mono({ 
@@ -50,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${quicksand.variable} ${geistMono.variable}`}>
       <body className="font-sans antialiased bg-background text-foreground">
         <Header />
         {children}

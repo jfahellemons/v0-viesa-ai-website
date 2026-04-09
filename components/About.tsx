@@ -3,7 +3,32 @@
 import { motion } from 'framer-motion'
 import { AnimatedCounter } from '@/components/AnimatedCounter'
 
-export function About() {
+export interface AboutProps {
+  title?: string;
+  paragraphs?: string[];
+  bulletPoints?: string[];
+  statistics?: { label: string; value: number; suffix?: string }[];
+}
+
+export function About({
+  title = "Waarom Kiezen Voor Ons AI-Advies?",
+  paragraphs = [
+    "Wij combineren diepgaande technische expertise met zakelijk inzicht om AI-oplossingen te leveren die zorgen voor echte ROI. Ons team heeft jarenlange ervaring in het begeleiden van Nederlandse organisaties bij de adoptie van AI.",
+    "Van strategie tot implementatie, wij begeleiden u bij elke stap en zorgen ervoor dat uw AI-initiatieven aansluiten bij uw bedrijfsdoelstellingen."
+  ],
+  bulletPoints = [
+    'Strategische AI-planning',
+    'Technische implementatie',
+    'Teamtraining & ondersteuning',
+    'Meetbare bedrijfsresultaten'
+  ],
+  statistics = [
+    { label: 'Bedrijven Geholpen', value: 150, suffix: '+' },
+    { label: 'Jaren Ervaring', value: 12, suffix: '+' },
+    { label: 'Succesvolle Projecten', value: 500, suffix: '+' },
+    { label: 'Klanttevredenheid', value: 98, suffix: '%' }
+  ]
+}: AboutProps) {
   return (
     <motion.section 
       whileInView={{ opacity: 1, y: 0 }}
@@ -21,21 +46,17 @@ export function About() {
             viewport={{ once: true, amount: 0.5 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance">
-              Waarom Kiezen Voor Ons AI-Advies?
+              {title}
             </h2>
-            <p className="text-muted-foreground mb-4 leading-relaxed">
-              Wij combineren diepgaande technische expertise met zakelijk inzicht om AI-oplossingen te leveren die zorgen voor echte ROI. Ons team heeft jarenlange ervaring in het begeleiden van Nederlandse organisaties bij de adoptie van AI.
-            </p>
-            <p className="text-muted-foreground mb-4 leading-relaxed">
-              Van strategie tot implementatie, wij begeleiden u bij elke stap en zorgen ervoor dat uw AI-initiatieven aansluiten bij uw bedrijfsdoelstellingen.
-            </p>
+            
+            {paragraphs?.map((paragraph, index) => (
+              <p key={index} className="text-muted-foreground mb-4 leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
+
             <ul className="space-y-3">
-              {[
-                'Strategische AI-planning',
-                'Technische implementatie',
-                'Teamtraining & ondersteuning',
-                'Meetbare bedrijfsresultaten'
-              ].map((item, i) => (
+              {bulletPoints?.map((item, i) => (
                 <li key={i} className="flex items-center gap-3">
                   <span className="w-2 h-2 bg-accent rounded-full"></span>
                   <span className="text-foreground">{item}</span>
@@ -52,15 +73,10 @@ export function About() {
             className="bg-card rounded-lg p-8 shadow-lg"
           >
             <div className="space-y-6">
-              {[
-                { label: 'Bedrijven Geholpen', value: 150, suffix: '+' },
-                { label: 'Jaren Ervaring', value: 12, suffix: '+' },
-                { label: 'Succesvolle Projecten', value: 500, suffix: '+' },
-                { label: 'Klanttevredenheid', value: 98, suffix: '%' }
-              ].map((stat, i) => (
+              {statistics?.map((stat, i) => (
                 <div key={i}>
                   <p className="text-[#173853] font-semibold text-3xl md:text-4xl mb-2">
-                    <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                    <AnimatedCounter value={stat.value} suffix={stat.suffix || ''} />
                   </p>
                   <p className="text-muted-foreground text-sm font-medium">{stat.label}</p>
                 </div>
@@ -72,3 +88,4 @@ export function About() {
     </motion.section>
   )
 }
+

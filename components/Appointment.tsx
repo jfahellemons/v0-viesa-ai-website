@@ -3,7 +3,15 @@
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
 
-export function Appointment() {
+export interface AppointmentProps {
+  title?: string;
+  subtitle?: string;
+}
+
+export function Appointment({
+  title = "Plan Uw Adviesgesprek",
+  subtitle = "Kies een tijd die u uitkomt"
+}: AppointmentProps) {
   return (
     <motion.section 
       whileInView={{ opacity: 1, y: 0 }}
@@ -21,10 +29,10 @@ export function Appointment() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
-            Plan Uw Adviesgesprek
+            {title}
           </h2>
           <p className="text-muted-foreground text-lg">
-            Kies een tijd die u uitkomt
+            {subtitle}
           </p>
         </motion.div>
 
@@ -88,3 +96,4 @@ export function Appointment() {
     </motion.section>
   )
 }
+

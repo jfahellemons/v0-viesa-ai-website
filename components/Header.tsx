@@ -9,11 +9,12 @@ export function Header() {
           <Image
             src="/logo.png"
             alt="Viesa AI Automations Logo"
-            width={180}
-            height={50}
+            width={200}
+            height={200}
             className="h-12 w-auto object-contain"
             priority
           />
+          <h1>Viesa</h1>
         </Link>
         <nav className="hidden md:flex gap-8 items-center font-semibold">
           <Link href="#about" className="text-[#13293d] hover:text-[#3e92cc] transition-colors">Over Ons</Link>
